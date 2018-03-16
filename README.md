@@ -72,7 +72,8 @@ $(function() {
     });
 ```
 
-3. The Express-on-Node-js server defines a URL route as pattern "/#####" that it listens for, for a GET method; it listens for an incoming request of type:
+3. 
+The Express-on-Node-js server defines a URL route as pattern "/#####" that it listens for, for a GET method; it listens for an incoming request of type:
 GET /#####
 
 The Express-on-Node.js route constructs a function which takes the regex variable (\d{5}) (the zip code) and puts it into the first param of the constructed function, as req.params[0].
@@ -103,6 +104,7 @@ app.get(/^\/(\d{5})$/, function(req, res, next) {
 ```
 
 4. 
+the.js on the client, in the same form submit handler, uses the "request" variable defined above, to display the temperature.
 
 public/the.js (again) -- the client-side javascript file:
 
@@ -114,18 +116,3 @@ $(function() {
       $h1.text("It is " + temperature + "º in " + zipCode + ".");
     });
 ```
-
-
-## Heading 2
-
-This is a test sentence.
-
-
-### Heading 3
-
-This is a test sentence.
-
-*  Item
-*  Item
-*  Item
-
