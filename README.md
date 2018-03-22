@@ -53,7 +53,7 @@ Below are selected lines from the app source code, that send data between client
     So the endpoint REST method and url pattern resulting from the `$.ajax()` call is: 
     GET /#####
 
-[public/the.js](https://github.com/mikeshhoffman/jsOnServer/blob/master/temperature-by-zip-code/public/the.js) -- the client-side javascript file:
+[public/the.js](https://github.com/mikeshhoffman/jsOnServer/blob/master/temperature-by-zip-code/public/the.js) -- the client-side JavaScript file:
 
 ```javascript
 $(function() {
@@ -69,12 +69,13 @@ $(function() {
     });
 ```
 
-3.  In _app.js_ is the main app javascript file residing and running on the server.
+3.  _app.js_, below, is the main app JavaScript file residing and running on the server.
     In _app.js_, the Express-on-Node-js server defines a URL route as pattern "/#####" that it listens for, for a GET method; it listens for an incoming request of type:
 GET /#####
 
 The route (an Express-on-Node.js route) constructs a function which takes the regex variable (\d{5}) representing the zip code and puts that variable into the first parameter of the constructed function, as `req.params[0]`.
 This way, the server has the zip code that was entered into the HTML form.
+
 The server calls another service, zippity-do-dah, to convert the zip code to a longitude/latitude.
 
 The server then calls the forecast.io service endpoint, as `weather.forecast()`, passing the longitude and latitude (for the zipcode), and a callback function.
